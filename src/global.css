@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Matter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=McLaren:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gilroy-Bold:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gilroy-Medium:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+
+.carousel {
+  @apply relative;
+}
+
+.carousel-inner {
+  @apply relative overflow-hidden;
+}
+
+.carousel-item {
+  @apply hidden;
+}
+
+.carousel-item.active {
+  @apply block;
+}
+
+.carousel-caption {
+  @apply absolute bottom-0 left-0 p-4 text-white;
+}
+
+.carousel-prev,
+.carousel-next {
+  @apply absolute top-0 z-10 p-4 text-3xl text-white;
+}
+
+.carousel-prev {
+  @apply left-0;
+}
+
+.carousel-next {
+  @apply right-0;
+}
