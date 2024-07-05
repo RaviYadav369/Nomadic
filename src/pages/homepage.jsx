@@ -3,7 +3,6 @@ import FrameComponent1 from "../components/frame-component1";
 import GroupComponent1 from "../components/group-component1";
 import FrameComponent2 from "../components/frame-component2";
 import FrameComponent3 from "../components/frame-component3";
-import FrameComponent4 from "../components/frame-component4";
 import GroupComponent from "../components/group-component";
 import Carousel from "../components/carousal";
 

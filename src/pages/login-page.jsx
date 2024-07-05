@@ -1,4 +1,37 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const [phone, setphone] = useState('')
+  const [password, setpassword] = useState('')
+  const [checkBox, setcheckBox] = useState(true)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const result = await fetch({
+        method: "POST",
+        url: "http://localhost:4000/auth/register",
+        body: JSON.stringify({
+          phone,
+          password
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      console.log(result)
+      navigate('/')
+
+    } catch (error) {
+      console.log(error)
+    }
+    setphone('')
+    setpassword('')
+    setcheckBox(true)
+    console.log(username, phone, password)
+  }
   return (
     <div className="w-full relative bg-gray-200 overflow-hidden flex flex-row items-start justify-start gap-[111px] leading-[normal] tracking-[normal] text-left text-9xl text-text-color-secondary font-caption-semibold-12 mq450:gap-[28px] mq750:gap-[55px] mq1250:flex-wrap">
       <img
@@ -18,12 +51,14 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start gap-[32px] max-w-full text-xs mq450:gap-[16px]">
-            <form className="m-0 self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full">
+            <form onSubmit={(e) => handleSubmit(e)} className="m-0 self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full">
               <div className="self-stretch rounded-lg bg-whitesmoke overflow-hidden flex flex-row items-start justify-start py-2.5 px-4 border-[1px] border-solid border-lightgray-100">
                 <input
                   className="w-[185px] [border:none] [outline:none] font-caption-semibold-12 text-sm bg-[transparent] h-6 relative leading-[24px] text-dimgray-100 text-left flex items-end p-0 z-[1]"
                   placeholder="Email or phone number"
                   type="text"
+                  value={phone}
+                  onChange={(e) => setphone(e.target.value)}
                 />
               </div>
               <div className="self-stretch flex flex-row items-start justify-start max-w-full">
@@ -32,6 +67,8 @@ const LoginPage = () => {
                     className="w-[108px] [border:none] [outline:none] font-caption-semibold-12 text-sm bg-[transparent] h-6 relative leading-[24px] text-dimgray-100 text-left flex items-end p-0 z-[1]"
                     placeholder="Enter password"
                     type="text"
+                    value={password}
+                    onChange={(e) => setpassword(e.target.value)}
                   />
                   <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
                     <div className="w-4 h-4 relative z-[1]">
@@ -46,14 +83,12 @@ const LoginPage = () => {
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-start justify-start py-0 pr-7 pl-0 gap-[16px] mq450:flex-wrap">
-                <div className="flex-1 flex flex-row items-start justify-start gap-[8px] min-w-[112px]">
-                  <div className="h-5 w-10 overflow-hidden shrink-0 flex flex-row items-start justify-start">
-                    <div className="h-5 w-10 relative rounded-17xl-5 bg-gold-100 box-border border-[0.5px] border-solid border-whitesmoke">
-                      <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-17xl-5 bg-gold-100 box-border hidden border-[0.5px] border-solid border-whitesmoke" />
-                      <div className="absolute top-[0px] left-[20px] shadow-[1px_1px_2px_-1px_rgba(51,_51,_51,_0.3)] rounded-xs bg-whitesmoke w-5 h-5 z-[1]">
-                        <div className="absolute h-4/5 w-4/5 top-[10%] right-[10%] bottom-[10%] left-[10%] shadow-[1px_1px_2px_-1px_rgba(51,_51,_51,_0.3)] rounded-xs bg-whitesmoke hidden" />
-                      </div>
-                    </div>
+                <div className="flex-1 flex flex-row items-center justify-start gap-[8px] min-w-[112px]">
+                  <div className=" overflow-hidden shrink-0 flex flex-row items-start justify-start">
+                    <label className="switch">
+                      <input type="checkbox" defaultChecked value={checkBox} onClick={() => setcheckBox(!checkBox)} />
+                      <span className="slider round"></span>
+                    </label>
                   </div>
                   <div className="flex-1 flex flex-col items-start justify-start pt-0.5 px-0 pb-0">
                     <div className="self-stretch relative text-xs leading-[16px] font-caption-semibold-12 text-gray-1300 text-left">
@@ -65,7 +100,7 @@ const LoginPage = () => {
                   Forgot password?
                 </div>
               </div>
-              <button className="cursor-pointer [border:none] pt-[9.6px] px-5 pb-[14.4px] bg-gold-100 self-stretch rounded-lg flex flex-row items-start justify-center whitespace-nowrap hover:bg-goldenrod-100">
+              <button type="submit" className="cursor-pointer [border:none] pt-[9.6px] px-5 pb-[14.4px] bg-gold-100 self-stretch rounded-lg flex flex-row items-start justify-center whitespace-nowrap hover:bg-goldenrod-100">
                 <div className="w-[59.3px] relative text-base leading-[24px] font-semibold font-caption-semibold-12 text-text-color-secondary text-center flex items-center justify-center shrink-0 min-w-[59.3px]">
                   Sign in
                 </div>

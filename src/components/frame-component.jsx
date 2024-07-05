@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const FrameComponent = ({ className = "" }) => {
   const navigate = useNavigate()
+  const handleClick =()=>{
+    navigate('/about-us')
+  }
   return (
     <header
       className={`self-stretch flex flex-row items-start justify-center pt-0 pb-14 pr-5 pl-[25px] box-border max-w-full text-left text-base text-text-color-secondary font-inter ${className}`}
@@ -36,7 +39,7 @@ const FrameComponent = ({ className = "" }) => {
               src="/arrow-10.svg"
             />
           </div>
-          <div className="flex-1 relative leading-[20px] whitespace-nowrap z-[1] cursor-pointer" >
+          <div onClick={()=>handleClick()} className="flex-1 relative leading-[20px] whitespace-nowrap z-[1] cursor-pointer" >
             About Us
           </div>
         </div>

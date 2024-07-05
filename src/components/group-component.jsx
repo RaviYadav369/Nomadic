@@ -19,7 +19,7 @@ const GroupComponent = ({
 
   return (
     <section
-      className={`self-stretch bg-gray-300 flex flex-col items-start justify-start pt-[58.3px] pb-[37.6px] pr-[79px] pl-[134px] box-border gap-[22.3px] max-w-full text-left text-5xl text-text-color-secondary font-mclaren mq450:pl-5 mq450:pt-[38px] mq450:pb-6 mq450:box-border mq750:pl-[67px] mq750:pr-[39px] mq750:box-border ${className}`}
+      className={`self-stretch bg-gray-300 flex mt-16 flex-col items-start justify-start pt-[58.3px] pb-[37.6px] pr-[79px] pl-[134px] box-border gap-[22.3px] max-w-full text-left text-5xl text-text-color-secondary font-mclaren mq450:pl-5 mq450:pt-[38px] mq450:pb-6 mq450:box-border mq750:pl-[67px] mq750:pr-[39px] mq750:box-border ${className}`}
       style={groupSectionStyle}
     >
       <footer className="w-[1439.9px] h-[450.4px] relative bg-gray-300 hidden max-w-full" />
