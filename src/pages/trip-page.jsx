@@ -20,7 +20,7 @@ const TripPage = () => {
               <div className="w-[74px] flex flex-col items-start justify-end pt-0 px-0 pb-[9px] box-border">
                 <div className="self-stretch h-px relative box-border z-[1] border-t-[1px] border-solid border-khaki-100" />
               </div>
-              <div className="flex-1 relative tracking-[0.17em] leading-[22px] inline-block min-w-[116px] z-[1]">
+              <div className="flex-1 relative tracking-[0.17em] mt-20 leading-[22px] inline-block min-w-[116px] z-[1]">
                 Group Journey
               </div>
               <div className="w-[74px] flex flex-col items-start justify-end pt-0 px-0 pb-[9px] box-border">

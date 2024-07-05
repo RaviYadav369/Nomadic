@@ -1,6 +1,38 @@
+import React, { useState } from "react";
 import GroupComponent from "../components/group-component";
+import GroupComponent4 from "../components/group-component4";
 
 const AboutUs1 = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const groupComponents = [
+    {
+      id: 1,
+      imagePlaceholder: "/rectangle-1091@2x.png",
+      title: "Ladakh Adventure: From Valleys to Lakes - A 13D/12N Journey",
+      location: "India",
+      duration: "13 Days",
+    },
+    {
+      id: 2,
+      imagePlaceholder: "/rectangle-1091@2x.png",
+      title: "African Safari:Adventure towards the Jungle",
+      location: "Africa",
+      duration: "10 Days",
+    },
+    {
+      id: 3,
+      imagePlaceholder: "/rectangle-1091@2x.png",
+      title: "Srinaga: Adventure towards the Snow",
+      location: "India",
+      duration: "4 Days",
+    },
+  ];
+
+  const filteredComponents = groupComponents.filter((component) =>
+    component.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="w-full h-[2048px] relative bg-gray-200 overflow-hidden flex flex-col items-end justify-start pt-8 pb-[943px] pr-[77px] pl-px box-border gap-[493px] leading-[normal] tracking-[normal] mq1225:gap-[246px] mq1225:pr-[38px] mq1225:box-border mq450:h-auto mq450:gap-[62px] mq750:gap-[123px]">
       <img
@@ -85,6 +117,8 @@ const AboutUs1 = () => {
                   className="w-[231px] [border:none] [outline:none] bg-[transparent] h-8 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border font-montserrat text-lg text-gray-400"
                   placeholder="Search"
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
             </div>
@@ -114,7 +148,7 @@ const AboutUs1 = () => {
           </div>
           <div className="w-[324px] flex flex-col items-start justify-start gap-[13px] max-w-full">
             <div className="self-stretch relative leading-[140%] mq450:text-base mq450:leading-[22px]">
-              Showing 24 Results
+              Showing {filteredComponents.length} Results
             </div>
             <div className="flex flex-row items-start justify-start gap-[13px] text-sm text-gray-200">
               <button className="cursor-pointer [border:none] pt-2.5 pb-[5px] pr-[11px] pl-[15px] bg-gray-600 rounded-81xl flex flex-row items-start justify-start gap-[5px] whitespace-nowrap hover:bg-gainsboro-300">
@@ -140,6 +174,19 @@ const AboutUs1 = () => {
                   src="/charmcross.svg"
                 />
               </div>
+            </div>
+            <div className="flex">
+              {filteredComponents.map((component) => (
+                  <GroupComponent4
+                    imagePlaceholder={component.imagePlaceholder}
+                    rectangle={component.rectangle}
+                    mdilocation={component.mdilocation}
+                    solarcalendarLinear={component.solarcalendarLinear}
+                    title={component.title}
+                    location={component.location}
+                    duration={component.duration}
+                  />
+              ))}
             </div>
           </div>
         </div>
@@ -174,7 +221,7 @@ const AboutUs1 = () => {
         alt=""
         src="/arrow-5.svg"
       />
-      <GroupComponent
+        <GroupComponent
         facebook="/facebook1.svg"
         whatsapp="/whatsapp1.svg"
         propAlignSelf="unset"
