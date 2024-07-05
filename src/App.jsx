@@ -10,8 +10,8 @@ import LoginPage from "./pages/login-page";
 import RegisterPage from "./pages/register-page";
 import TripSchedulePage from "./pages/trip-schedule-page";
 import TripPage from "./pages/trip-page";
-import AboutUs1 from "./pages/about-us1";
 import AboutUs from './pages/about-us';
+import TripPlan from "./pages/trip.plan";
 
 function App() {
   const action = useNavigationType();
@@ -49,6 +49,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/trip-plan":
+        title = "";
+        metaDescription = "";
+        break;
       case "/about-us":
         title = "";
         metaDescription = "";
@@ -76,7 +80,8 @@ function App() {
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/trip-schedule-page" element={<TripSchedulePage />} />
       <Route path="/trip-page" element={<TripPage />} />
-      <Route path="/about-us" element={<AboutUs1 />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/trip-plan" element={<TripPlan />} />
     </Routes>
   );
 }
