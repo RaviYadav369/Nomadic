@@ -14,8 +14,7 @@ const Carousel = () => {
 
     return (
         <>
-            <div className=' h-[345px] w-full'>
-
+            <div className=' h-[345px]  max-w-full'>
                 <Swiper
                     navigation={{
                         nextEl: ".custom-next-button",
@@ -36,7 +35,6 @@ const Carousel = () => {
 
                     <SwiperSlide>
                         {({ isActive }) => (
-
                             <div className={`w-[812px] !m-[0] absolute bottom-[-37.2px]  [backdrop-filter:blur(115.78px)] rounded-[35.88px] [background:linear-gradient(142.13deg,_rgba(253,_248,_255,_0.21),_rgba(253,_248,_255,_0))] box-border flex flex-col items-center justify-start pt-[37px] px-5 pb-[25px] gap-[23.8px] z-[3] text-base-3 border-[14.5px] border-solid border-gray-2100 ${isActive ? 'z-10!' : ''}`}>
                                 <div className={`w-[812px] h-[424.3px] relative [backdrop-filter:blur(115.78px)] rounded-[35.88px] [background:linear-gradient(142.13deg,_rgba(253,_248,_255,_0.21),_rgba(253,_248,_255,_0))] box-border hidden max-w-full z-[0] border-[14.5px] border-solid border-gray-2100 ${isActive ? 'scale-125!' : ''}`} />
                                 <img

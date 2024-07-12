@@ -64,7 +64,7 @@ const GroupComponent1 = ({ className = "" }) => {
             className="mySwiper1"
           >
             <SwiperSlide>
-              <section className="flex flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
+              <section className="flex h-[50px] flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
                 <img
                   className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden max-h-full object-cover"
                   loading="lazy"
@@ -77,7 +77,7 @@ const GroupComponent1 = ({ className = "" }) => {
               </section>
             </SwiperSlide>
             <SwiperSlide>
-              <section className="flex flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
+              <section className="flex h-[50px] flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
                 <img
                   className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden max-h-full object-cover"
                   loading="lazy"
@@ -90,7 +90,7 @@ const GroupComponent1 = ({ className = "" }) => {
               </section>
             </SwiperSlide>
             <SwiperSlide>
-              <section className="flex flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
+              <section className="flex h-[50px] flex-row w-full items-start justify-start py-52 px-6 box-border relative max-w-full z-[1]">
                 <img
                   className="h-full w-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden max-h-full object-cover"
                   loading="lazy"
