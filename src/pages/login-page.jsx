@@ -10,9 +10,8 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const result = await fetch({
+      const result = await fetch("http://20.244.89.90:8000/auth/login", {
         method: "POST",
-        url: "http://localhost:4000/auth/register",
         body: JSON.stringify({
           phone,
           password
@@ -21,8 +20,13 @@ const LoginPage = () => {
           "Content-Type": "application/json"
         }
       })
-      console.log(result)
-      navigate('/')
+      const data = await result.json()
+      console.log(data)
+      if (data.success === true) {
+        
+        localStorage.setItem("accessToken", data.token)
+        navigate('/')
+      }
 
     } catch (error) {
       console.log(error)
@@ -30,7 +34,6 @@ const LoginPage = () => {
     setphone('')
     setpassword('')
     setcheckBox(true)
-    console.log(username, phone, password)
   }
   return (
     <div className="w-full relative bg-gray-200 overflow-hidden flex flex-row items-start justify-start gap-[111px] leading-[normal] tracking-[normal] text-left text-9xl text-text-color-secondary font-caption-semibold-12 mq450:gap-[28px] mq750:gap-[55px] mq1250:flex-wrap">

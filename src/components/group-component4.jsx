@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const GroupComponent4 = ({
   className = "",
@@ -7,6 +8,10 @@ const GroupComponent4 = ({
   mdilocation,
   solarcalendarLinear,
 }) => {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/trip-schedule-page')
+  }
   return (
     <div
       className={`w-[269px] rounded-[11.96px] bg-gray-1700 flex flex-col items-start justify-start text-center text-xs text-black-white-gray10 font-montserrat ${className}`}
@@ -65,8 +70,8 @@ const GroupComponent4 = ({
           </div>
         </div>
         <div className="self-stretch h-[0.5px] relative box-border z-[2] border-t-[0.5px] border-solid border-gray-1000" />
-        <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[50px] pl-[49px] text-sm-9 mq450:pl-5 mq450:pr-5 mq450:box-border">
-          <div className="flex-1 relative leading-[22.9px] font-semibold z-[2]">
+        <div onClick={()=>handleClick()} className="self-stretch cursor-pointer flex flex-row items-start justify-start py-0 pr-[50px] pl-[49px] text-sm-9 mq450:pl-5 mq450:pr-5 mq450:box-border">
+          <div  className="flex-1 relative leading-[22.9px] font-semibold z-[2]">
             View Trip
           </div>
         </div>

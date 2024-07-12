@@ -10,8 +10,9 @@ import LoginPage from "./pages/login-page";
 import RegisterPage from "./pages/register-page";
 import TripSchedulePage from "./pages/trip-schedule-page";
 import TripPage from "./pages/trip-page";
-import AboutUs from './pages/about-us';
+import BrowseTrip from './pages/browse-trip';
 import TripPlan from "./pages/trip.plan";
+import AboutUs from "./pages/about-us";
 
 function App() {
   const action = useNavigationType();
@@ -80,6 +81,7 @@ function App() {
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/trip-schedule-page" element={<TripSchedulePage />} />
       <Route path="/trip-page" element={<TripPage />} />
+      <Route path="/browse-trip" element={<BrowseTrip />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/trip-plan" element={<TripPlan />} />
     </Routes>

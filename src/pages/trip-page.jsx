@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import Description from "../components/description";
 import Carousel from "../components/carousal";
+import FrameComponent from "../components/frame-component";
 
 const TripPage = ({ className = "" }) => {
   return (
@@ -13,26 +14,8 @@ const TripPage = ({ className = "" }) => {
         alt=""
         src="/banner@2x.png"
       />
-      <header className="self-stretch flex flex-row items-start justify-center pt-0 pb-[163px] pr-5 pl-[25px] box-border max-w-full">
-        <nav className="m-0 w-[1281px] flex flex-row items-start justify-between gap-[20px] max-w-full text-left text-5xl text-black-white-gray10 font-mclaren mq750:w-[888px]">
-          <div className="w-[177px] flex flex-col items-start justify-start py-0 pr-5 pl-0 box-border">
-            <div className="relative leading-[29px] inline-block min-w-[111px] whitespace-nowrap">
-              Nomadic
-            </div>
-          </div>
-          <nav className="m-0 w-[393px] flex flex-row items-start justify-start gap-[30px] max-w-full text-center text-base text-black-white-gray10 font-inter mq750:hidden">
-            <div className="flex-1 relative leading-[20px]">Destination</div>
-            <div className="flex-1 relative leading-[20px] whitespace-nowrap">
-              Browse Trips
-            </div>
-            <div className="flex-1 relative leading-[20px] whitespace-nowrap">
-              About Us
-            </div>
-          </nav>
-          <div className="w-[111px] relative text-base leading-[20px] font-inter text-right flex items-center shrink-0">
-            Account
-          </div>
-        </nav>
+      <header className="self-stretch flex flex-row items-start justify-center pt-0 pb-[163px] pr-5 pl-[25px] box-border max-w-full">      
+          <FrameComponent />
       </header>
       <section className="self-stretch flex flex-row items-start justify-center pt-0 px-5 pb-[85px] box-border max-w-full shrink-0 text-center text-lg text-khaki-100 font-matter">
         <div className="w-[924px] flex flex-col items-end justify-start gap-[11px] max-w-full">

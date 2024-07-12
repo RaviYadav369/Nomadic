@@ -18,9 +18,8 @@ const Header = ({ className = "" }) => {
     if (checkBox === true) {
       if (password === confirmPassword) {
         try {
-          const result = await fetch({
+          const result = await fetch("http://20.244.89.90:8000/auth/register",{
             method:"POST",
-            url:"http://localhost:4000/auth/register",
             body:JSON.stringify({
               username,
               phone,
@@ -30,8 +29,9 @@ const Header = ({ className = "" }) => {
               "Content-Type":"application/json"
             }
           })
-          console.log(result)
-            navigate('/')
+          const data = await result.json()
+          console.log(data)
+            navigate('/login-page')
           
         } catch (error) {
           console.log(error)
